@@ -1,10 +1,15 @@
-import EstiloGlobal from "./styles/styles"
+import BarraLateral from "./containers/BarraLateral"
+import ListaContatos from "./containers/ListaContatos"
+import EstiloGlobal, { Container } from "./styles/styles"
 
 function App() {
   return (
     <>
       <EstiloGlobal/>
-      <h1>em preparação</h1>
+      <Container>
+        <BarraLateral/>
+        <ListaContatos/>
+      </Container>
     </>
   )
 }
