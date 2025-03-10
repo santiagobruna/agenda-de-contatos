@@ -1,56 +1,32 @@
+import { useSelector } from "react-redux"
 import ContatosCard from "../../components/ContatosCard"
 import * as S from './style'
+import { RootReducer } from "../../store"
+import BotaoAdicionar from "../../components/BotaoAdicionar"
 const ListaContatos = () => {
+    const contatos = useSelector((state: RootReducer) => state.agendaContatos.itens);
+    const filtro = useSelector((state: RootReducer) => state.filtroContatos.valor);
+
+     // Filtrando os contatos com base no filtro
+        const contatosFiltrados = contatos.filter(contato =>{
+            const nomeContato = contato.nome.toLowerCase();
+            const valorFiltro = filtro ? filtro.toLowerCase() : ''; // Verifica se o filtro é válido
+            return nomeContato.includes(valorFiltro);
+        }
+        );
     return(
         <S.CardContainer>
+            {contatosFiltrados.map((contato) => (
             <ContatosCard 
-                nome="Juliana silva" 
-                email={"juliana@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor2.png"
+                key={contato.id}
+                id={contato.id}
+                nome={contato.nome} 
+                email={contato.email} 
+                celular={contato.celular}
+                imagem={contato.imagem}
             />
-            <ContatosCard 
-                nome="Rafaela Oliveira" 
-                email={"rafa@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor2.png"
-            />
-            <ContatosCard 
-                nome="Joilton Santos" 
-                email={"joilton@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor1.png"
-            />
-            <ContatosCard 
-                nome="Rodrigo Paulo" 
-                email={"juliana@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor1.png"
-            />
-            <ContatosCard 
-                nome="Juliana silva" 
-                email={"juliana@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor2.png"
-            />
-            <ContatosCard 
-                nome="Jean Ribeiro" 
-                email={"jean@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor1.png"
-            />
-            <ContatosCard 
-                nome="Lucio  silva" 
-                email={"lucio@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor1.png"
-            />
-            <ContatosCard 
-                nome="Juliana silva" 
-                email={"juliana@gmail.com"} 
-                celular={'(21) 99994-444'}
-                image="./assets/tutor2.png"
-            />
+            ))}
+            <BotaoAdicionar/>
         </S.CardContainer>
     )   
 }

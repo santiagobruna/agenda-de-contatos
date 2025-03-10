@@ -1,14 +1,32 @@
+import { useDispatch, useSelector } from 'react-redux';
 import FiltroCard from '../../components/FiltroCard';
 import * as S from './styles'
-const BarraLateral = () => {
+import { RootReducer } from '../../store';
+import { filtrar } from '../../store/reducers/filtro';
+import { useNavigate } from "react-router-dom"
+type Props = {
+    mostrarFiltros: boolean
+}
+const BarraLateral = ({mostrarFiltros} : Props) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const filtro = useSelector((state: RootReducer) => state.filtroContatos.valor);
+    const handleFiltroChange = (e: React.ChangeEvent<HTMLInputElement >) => {
+        dispatch(filtrar(e.target.value))
+    }
     return (
     <>
         <S.Aside>
-            <S.Campo type="text" placeholder="Procurar" />
-            <S.Filtros>
-                <FiltroCard contador={1} legenda={'Favoritos'}/>
-                <FiltroCard contador={3} legenda={'Todas'}/>
-            </S.Filtros>
+        {mostrarFiltros ? (
+            <>
+                <S.Campo type="text" placeholder="Procurar" value={filtro} onChange={handleFiltroChange}/>
+                <S.Filtros>
+                    <FiltroCard legenda={'Todas'}/>
+                </S.Filtros>
+            </>
+        ): (
+                <S.Button onClick={() => navigate('/')} type="button">Voltar a lista de contatos</S.Button>
+                ) }
         </S.Aside>
     </>
     )

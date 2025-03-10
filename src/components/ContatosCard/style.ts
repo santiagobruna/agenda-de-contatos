@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Card = styled.div`
     max-width: 230px;
-    height: 247px;
+    height: 268px;
     padding: 20px;
     border-radius: 20px;
     background-color: #EEEEEE ;
