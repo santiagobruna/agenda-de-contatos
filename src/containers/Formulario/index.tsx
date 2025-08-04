@@ -23,7 +23,7 @@ const Formulario = () => {
         <Form onSubmit={cadastroContato}>
             <h3>Novo contato</h3>
             <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome" />
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}  placeholder="Email" />
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}  placeholder="Email" autoComplete="off" />
             <input type="text" value={celular} onChange={(e) => setCelular(e.target.value)} 
             placeholder="Celular" />
             <input type="text" value={imagem} onChange={(e) => setImagem(e.target.value)} placeholder="URL da imagem" />

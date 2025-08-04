@@ -48,7 +48,8 @@ const agendaSlice = createSlice({
 
                 const novoContato = {
                     ...action.payload,
-                    id: ultimoContato ? ultimoContato.id + 1 : 1
+                    id: ultimoContato ? ultimoContato.id + 1 : 1,
+                    imagem: action.payload.imagem || "/assets/tutor2.png"
                 }
                 state.itens.push(novoContato)
             }

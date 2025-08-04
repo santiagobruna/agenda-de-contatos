@@ -13,7 +13,7 @@ const filtroSlice = createSlice({
     name: 'filtroContatos',
     initialState,
     reducers: {
-        filtrar: (state, action: PayloadAction<string>) => {
+        filtrar: (state: { valor: any; }, action: PayloadAction<string>) => {
             state.valor = action.payload  // Atualiza o valor da pesquisa
         }
     }
