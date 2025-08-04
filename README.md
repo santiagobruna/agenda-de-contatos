@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Agenda de Contatos
+Este projeto é uma aplicação de agenda de contatos desenvolvida com React e TypeScript, oferecendo uma experiência dinâmica e intuitiva.
+# 🎯Funcionalidades:
+- ✅ Adicionar novos contatos na sua agenda de contatos.
+- 🔍 Filtrar contatos para encontrar rapidamente o usuário desejado.
+- ✏️ Editar contatos de forma prática.
+- ❌ Remover contatos.
+- 📂 Gerenciamento de estado com Redux, garantindo maior escalabilidade e organização.
+- 🔀 Navegação entre páginas com React Router para uma experiência fluida.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tecnologias Utilizadas
+- React - Biblioteca para construção de interfaces.
+- TypeScript - Superconjunto tipado de JavaScript.
+- Vite - Build tool rápida para aplicações web modernas.
+- Styled Components - Utilizado para estilização dinâmica e moderna.
+- Redux - Gerenciamento global de estado.
+- React Router - Navegação entre páginas sem recarregamento.
 
-Currently, two official plugins are available:
+## 📸 Demonstração
+![agenda-contatos](https://github.com/user-attachments/assets/f582f352-a3b1-4b23-a7d8-e52ce9f646e3)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Como Rodar o Projeto:
 
-## Expanding the ESLint configuration
+1. Clone o repositório:
+``` 
+git clone https://github.com/santiagobruna/agenda-de-contatos.git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+````
+2. Acesse a pasta do projeto:
+``` 
+cd agenda-de-contatos
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+````
+3. Instale as dependências:
+``` 
+npm install
+# ou
+yarn install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+````
+4. Execute o projeto:
+``` 
+npm run dev
+# ou
+yarn dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+````
+## Acesse o projeto
+Clicando aqui: https://agenda-de-contatos-kappa-virid.vercel.app/
